@@ -124,8 +124,8 @@ public class Matica
         for (int i = 0; i < pocetRiadkov(); i++) {
             boolean testPivotu = false;
             for (int j = 0; j < pocetStlpcov() + 1; j++) {
-                if(pole[i][j] < 0.000000000001 )
-                    pole[i][j] = 0;
+               // if(pole[i][j] < 0.000000000001 )
+                 //   pole[i][j] = 0;
                 if(pole[i][j] != 0)
                 {
                     testPivotu = true;
@@ -183,8 +183,13 @@ public class Matica
         {
             System.out.println("Sustava ma prave jedno riesenie!");
             int stlpecVysledku = pocetStlpcov();
+            int cislovac = 1;
             for (int i = 0; i < pocetRiadkov(); i++) {
-                System.out.println("x" + (i+1) + "= " + pole[i][stlpecVysledku]);
+                if(PocetNenulovych(i) != 0)
+                {
+                System.out.println("x" + cislovac + "= " + pole[i][stlpecVysledku]);
+                ++cislovac;
+                }
             }
         }
     }
